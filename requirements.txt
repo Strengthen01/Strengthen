@@ -1,0 +1,17 @@
+python>=3.9
+numpy
+pandas
+opencv-python
+torch>=1.13
+ultralytics>=8.0.0
+stable-baselines3
+gym
+sumo-tools
+traci
+flask
+flask-socketio
+python-socketio
+matplotlib
+scikit-learn
+tqdm
+onnxruntime

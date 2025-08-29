@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>AI Traffic Panel</title>
+  <script src="https://cdn.socket.io/4.4.1/socket.io.min.js"></script>
+</head>
+<body>
+  <h1>AI Traffic Demo Panel</h1>
+  <div>
+    <p>Cars: <span id="cars">0</span></p>
+    <p>Buses: <span id="buses">0</span></p>
+    <p>Phase: <span id="phase">0</span></p>
+    <p>Decision: <span id="decision">idle</span></p>
+  </div>
+  <script>
+    const socket = io();
+    socket.on('state', (s) => {
+      document.getElementById('cars').innerText = s.cars;
+      document.getElementById('buses').innerText = s.buses;
+      document.getElementById('phase').innerText = s.phase;
+      document.getElementById('decision').innerText = s.decision;
+    });
+    // 发给服务器 update 的信号由 demo_live.py 作为客户端发送
+  </script>
+</body>
+</html>
